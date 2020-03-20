@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+	const div = document.querySelector('#abc')
+	const p = abc.querySelector('p')
+	const span = p.querySelector('span')
+	const fn = function (event) {
+		console.log(event.target, 'target')
+		console.log(event.currentTarget, 'currentTarget')
+		console.log(new Array(30).fill('-').join(''))
+	}
+
+	span.addEventListener('click', fn, false)
+	span.removeEventListener('click', fn, false)
+</script>

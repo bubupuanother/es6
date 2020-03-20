@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<style>
+		#box {
+			width: 200px;
+			height: 200px;
+			border: 1px solid red;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="box">123</div>
+</body>
+
+</html>
+<script>
+	//跨域
+	/**
+	 * 1、浏览器限制
+	 * 2、跨域（域名，端口不一样都是跨域）
+	 * 3、XHR（XMLHttpRequest请求）
+	 */
+	//解决方法
+	//jsonp 
+	//nodejs webpack-dev-serve
+	//后台设置设置一个请求头
+
+
+	//原生dom添加节点
+	//1、直接添加
+	//2、使用addEventListener
+	document.getElementById("box").addEventListener("click", function (event) {
+		console.log(event)
+		//event的属性: isTrusted screenX screenY clientX
+		//event的方法: preventDefault stopPropagation
+	})
+	/*
+	触发流程:
+	addEventListener: false 触发流程
+	1. 捕获阶段: 从外往里 document -> body -> div
+	2. 目标阶段
+	3. 冒泡阶段(执行事件): 从里往外 div -> body -> document
+
+	addEventListener: true 反捕获
+	1. 捕获阶段(执行事件): 从外往里 document -> body -> div
+	2. 目标阶段
+	3. 冒泡阶段: 从里往外 span -> div -> body -> document
+	*/
+
+
+	//redux store
+	const store = createStore(
+		myPersistReducer,
+		applyMiddleware(promise, thunk)
+	)
+</script>
